@@ -67,9 +67,11 @@
                 
                 if ([newKeyCandidate isEqualToData:newKey]) {
                     [messagesToDecrypt addObject:invalidMessageSignal];
+                    [invalidKeyMessage removeWithTransaction:transaction];
                 }
             }
         }];
+        
         [self removeWithTransaction:transaction];
     }];
     
